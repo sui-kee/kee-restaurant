@@ -24,7 +24,7 @@ export function Navigation() {
   return (
     <>
       <header className="flex items-center justify-between h-16 px-4 md:px-6 bg-white fixed top-0 left-0 right-0 z-50 shadow-md">
-        <Link className="flex items-center gap-2" href="#">
+        <Link className="flex items-center gap-2" href="/">
           <TableIcon className="h-6 w-6 text-gray-900" />
           <span className="text-lg font-bold text-gray-900">
             Acme Restaurant
