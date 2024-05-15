@@ -19,16 +19,38 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import OpenOrClosed from "../isOpen";
+import { Suspense } from "react";
 
 export function Navigation() {
   return (
     <>
-      <header className="flex items-center justify-between h-16 px-4 md:px-6 bg-white fixed top-0 left-0 right-0 z-50 shadow-md">
+      <header className="flex items-center justify-between h-16 px-4 md:px-6 bg-white sticky top-0 left-0 right-0 z-50 shadow-md">
         <Link className="flex items-center gap-2" href="/">
-          <TableIcon className="h-6 w-6 text-gray-900" />
-          <span className="text-lg font-bold text-gray-900">
-            Acme Restaurant
-          </span>
+          <svg
+            width="100"
+            height="50"
+            viewBox="0 0 200 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10,10 L10,90 L30,90 L30,60 L60,90 L80,90 L50,60 L80,30 L60,30 L30,60 L30,10 Z"
+              fill="black"
+            />
+
+            <path
+              d="M100,10 L100,90 L160,90 L160,70 L120,70 L120,55 L160,55 L160,35 L120,35 L120,20 L160,20 L160,10 Z"
+              fill="black"
+            />
+
+            <path
+              d="M170,10 L170,90 L230,90 L230,70 L190,70 L190,55 L230,55 L230,35 L190,35 L190,20 L230,20 L230,10 Z"
+              fill="black"
+            />
+          </svg>
+          <Suspense fallback={<div>loading</div>}>
+            <OpenOrClosed />
+          </Suspense>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700 hover:text-gray-900">
           <Link

@@ -32,18 +32,27 @@ import {
   CardFooter,
   Card,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 export function Home() {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative">
+        <Image
+          src={
+            "https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/pexels-vedanti-66315-239975.jpg?alt=media&token=6994296e-62ae-4494-b059-59e35d8935ef"
+          }
+          fill
+          alt="bg"
+          className=" object-cover bg-center z-[-1]"
+        />
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl rounded-3xl lg:text-6xl/none p-2 text-white bg-[rgba(0,0,0,0.5)]">
                 Delicious Dining at Chez Remy
               </h1>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+              <p className="mx-auto max-w-[700px] text-white md:text-3xl dark:text-gray-400 bg-[rgba(209,93,93,0.5)] p-2 rounded-md ">
                 Experience the finest French cuisine in a cozy, intimate
                 setting.
               </p>
@@ -84,11 +93,11 @@ export function Home() {
                 </Link>
               </div>
             </div>
-            <img
+            <Image
               alt="Featured Dishes"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="/placeholder.svg"
+              src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_740790869_Preview.jpeg?alt=media&token=6c6bb822-a1a9-48f7-841b-e92d534e5da8"
               width="550"
             />
           </div>
@@ -97,11 +106,11 @@ export function Home() {
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="grid items-center gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
-            <img
+            <Image
               alt="About Chez Remy"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
-              src="/placeholder.svg"
+              src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_761945624_Preview_Editorial_Use_Only.jpeg?alt=media&token=43b5aa64-8d69-4dc3-ae25-a48fbf900827"
               width="550"
             />
             <div className="flex flex-col justify-center space-y-4">
@@ -113,16 +122,16 @@ export function Home() {
                   A Taste of France in the Heart of the City
                 </h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Chez Remy is a family-owned restaurant that has been serving
-                  authentic French cuisine for over 20 years. Our cozy, intimate
-                  setting and impeccable service create the perfect atmosphere
-                  for an unforgettable dining experience.
+                  KEE Restaurant is a family-owned restaurant that has been
+                  serving authentic French cuisine for over 20 years. Our cozy,
+                  intimate setting and impeccable service create the perfect
+                  atmosphere for an unforgettable dining experience.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link
                   className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                  href="#"
+                  href="/about-us"
                 >
                   Learn More
                 </Link>

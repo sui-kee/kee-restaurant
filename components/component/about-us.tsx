@@ -26,6 +26,7 @@ To read more about using these font, please visit the Next.js documentation:
 import Link from "next/link";
 import React from "react";
 import Location from "../about-us/location";
+import Image from "next/image";
 
 export function AboutUs() {
   return (
@@ -39,7 +40,7 @@ export function AboutUs() {
                   Established 2015
                 </div>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  The Rustic Spoon
+                  KEE RESTAURANT
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
                   Serving up delicious, locally-sourced cuisine in the heart of
@@ -61,19 +62,13 @@ export function AboutUs() {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center">
-              <img
-                alt="The Rustic Spoon"
-                className="w-full max-w-[200px]"
-                height="200"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "200/200",
-                  objectFit: "cover",
-                }}
-                width="200"
-              />
-            </div>
+
+            <Image
+              alt="The Rustic Spoon"
+              className=" object-cover z-[-1] bg-center"
+              fill
+              src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_761945624_Preview_Editorial_Use_Only.jpeg?alt=media&token=43b5aa64-8d69-4dc3-ae25-a48fbf900827"
+            />
           </div>
         </div>
       </section>
@@ -168,22 +163,22 @@ export function AboutUs() {
               </p>
             </div>
             <div className="grid gap-4">
-              <img
-                alt="Dining Room"
+              <Image
+                alt="Kitchen"
                 className="rounded-lg object-cover"
                 height="600"
-                src="/placeholder.svg"
+                src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_218767403_Preview.jpeg?alt=media&token=5b762787-86ec-463e-9625-df79faaf60aa"
                 style={{
                   aspectRatio: "800/600",
                   objectFit: "cover",
                 }}
                 width="800"
               />
-              <img
-                alt="Kitchen"
+              <Image
+                alt="Tables"
                 className="rounded-lg object-cover"
                 height="600"
-                src="/placeholder.svg"
+                src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_466427886_Preview.jpeg?alt=media&token=9b8c8815-ba71-4a10-8654-5fe862bcfe5a"
                 style={{
                   aspectRatio: "800/600",
                   objectFit: "cover",
@@ -209,11 +204,11 @@ export function AboutUs() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden">
-              <img
+              <Image
                 alt="Parking Lot"
                 className="rounded-lg object-cover"
                 height="600"
-                src="/placeholder.svg"
+                src="https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/AdobeStock_529868714_Preview.jpeg?alt=media&token=8748b927-8d20-49c5-8a2b-e821ba63daa9"
                 style={{
                   aspectRatio: "800/600",
                   objectFit: "cover",
