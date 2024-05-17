@@ -87,21 +87,21 @@ export function Navigation() {
         <nav className="grid gap-2 p-4 bg-white">
           <Link
             className="py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
-            href="#"
+            href="/about-us"
           >
             About us
           </Link>
           <Link
             className="py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
-            href="#"
+            href="/menu"
           >
             Menu
           </Link>
           <Link
             className="py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
-            href="#"
+            href="/reservation"
           >
-            Catering
+            Reservation
           </Link>
         </nav>
       </div>
