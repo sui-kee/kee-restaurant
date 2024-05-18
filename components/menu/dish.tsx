@@ -26,7 +26,7 @@ export default function DishMeal({ dish }: { dish: Dish }) {
           <h2>INGREDIENTS:</h2>
           <div className=" flex flex-wrap gap-2">
             {dish.ingredients.map((ingredient, index) => (
-              <h1>{ingredient},</h1>
+              <h1 key={index}>{ingredient},</h1>
             ))}
           </div>
         </div>
