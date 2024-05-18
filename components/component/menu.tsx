@@ -27,11 +27,15 @@ import {
 import { CardContent, Card } from "@/components/ui/card";
 import React from "react";
 import Image from "next/image";
+import porkDishes from "@/lib/porkDishes";
+import DishMeal from "../menu/dish";
+import fishDishes from "@/lib/fishDishes";
+import vegetableDishes from "@/lib/vegetableDishes";
 
 export function Menu() {
   return (
     <main className="flex flex-col">
-      <section className="relative border text-white py-20 px-4 md:px-6">
+      {/* <section className="relative border text-white py-20 px-4 md:px-6">
         <Image
           src={
             "https://firebasestorage.googleapis.com/v0/b/kee-restaurant.appspot.com/o/pexels-enginakyurt-2673353.jpg?alt=media&token=33b07092-5d45-4fe9-bb55-d53bf177186c"
@@ -62,7 +66,7 @@ export function Menu() {
           </div>
           <Button>Order Online</Button>
         </div>
-      </section>
+      </section> */}
       <nav className="bg-white shadow-sm dark:bg-gray-950">
         <div className="container mx-auto flex justify-center py-4 px-4 md:px-6">
           <Link
@@ -96,274 +100,31 @@ export function Menu() {
       </nav>
       <section className="py-12 px-4 md:px-6" id="appetizers">
         <div className="container mx-auto">
-          <h2 className="mb-6 text-2xl font-bold">Appetizers</h2>
+          <h2 className="mb-6 text-2xl font-bold">Porks</h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <Card>
-              <CardContent>
-                <img
-                  alt="Appetizer"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Bruschetta</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Toasted bread topped with tomatoes, basil, and garlic.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 15 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Bread, tomatoes, basil, garlic, olive oil
-                </p>
-                <p className="mt-4 font-semibold">$8.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Appetizer"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Calamari Fritti</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Crispy fried calamari with lemon and marinara sauce.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 20 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Calamari, flour, lemon, marinara sauce
-                </p>
-                <p className="mt-4 font-semibold">$12.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Appetizer"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Meatballs</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Homemade meatballs in a rich tomato sauce.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 45 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Ground beef, breadcrumbs, parmesan, tomato sauce
-                </p>
-                <p className="mt-4 font-semibold">$9.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Appetizer"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Caprese Salad</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Fresh mozzarella, tomatoes, and basil with balsamic glaze.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 10 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Mozzarella, tomatoes, basil, balsamic glaze
-                </p>
-                <p className="mt-4 font-semibold">$11.99</p>
-              </CardContent>
-            </Card>
+            {porkDishes.map((dish, index) => (
+              <DishMeal dish={dish} key={index} />
+            ))}
           </div>
         </div>
       </section>
       <section className="py-12 px-4 md:px-6" id="entrees">
         <div className="container mx-auto">
-          <h2 className="mb-6 text-2xl font-bold">Entrees</h2>
+          <h2 className="mb-6 text-2xl font-bold">Fishes</h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <Card>
-              <CardContent>
-                <img
-                  alt="Entree"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Chicken Parmesan</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Breaded chicken breast topped with marinara and mozzarella.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 45 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Chicken, breadcrumbs, marinara, mozzarella
-                </p>
-                <p className="mt-4 font-semibold">$18.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Entree"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Grilled Salmon</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Fresh salmon fillet grilled and served with lemon.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 20 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Salmon, lemon, olive oil
-                </p>
-                <p className="mt-4 font-semibold">$22.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Entree"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">
-                  Fettuccine Alfredo
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Fettuccine pasta in a creamy Parmesan sauce.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 30 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Fettuccine, butter, cream, parmesan
-                </p>
-                <p className="mt-4 font-semibold">$16.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Entree"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Steak Frites</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Grilled steak served with crispy French fries.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 35 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Steak, potatoes, oil, salt, pepper
-                </p>
-                <p className="mt-4 font-semibold">$24.99</p>
-              </CardContent>
-            </Card>
+            {fishDishes.map((dish, index) => (
+              <DishMeal dish={dish} key={index} />
+            ))}
           </div>
         </div>
       </section>
       <section className="py-12 px-4 md:px-6" id="desserts">
         <div className="container mx-auto">
-          <h2 className="mb-6 text-2xl font-bold">Desserts</h2>
+          <h2 className="mb-6 text-2xl font-bold">Vegetables</h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <Card>
-              <CardContent>
-                <img
-                  alt="Dessert"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Tiramisu</h3>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Classic Italian dessert with espresso-soaked ladyfingers.
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Cooking Time: 30 minutes
-                </p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                  Ingredients: Ladyfingers, espresso, mascarpone, cocoa
-                </p>
-                <p className="mt-4 font-semibold">$8.99</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img
-                  alt="Dessert"
-                  className="mb-4 rounded-lg object-cover"
-                  height={150}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "200/150",
-                    objectFit: "cover",
-                  }}
-                  width={200}
-                />
-                <h3 className="mb-2 text-lg font-semibold">Crème Brûlée</h3>
-              </CardContent>
-            </Card>
+            {vegetableDishes.map((dish, index) => (
+              <DishMeal dish={dish} key={index} />
+            ))}
           </div>
         </div>
       </section>
