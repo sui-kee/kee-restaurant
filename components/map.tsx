@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+require("dotenv").config();
 import {
+  useLoadScript,
   GoogleMap,
-  LoadScript,
   Marker,
   DirectionsRenderer,
 } from "@react-google-maps/api";
@@ -16,8 +18,18 @@ const center = {
   lng: 101.4161319,
 };
 
-const Map = ({ userLocation }: any) => {
-  const [directions, setDirections] = React.useState<any>(null);
+interface MapProps {
+  userLocation: google.maps.LatLngLiteral | null;
+}
+
+const Map: React.FC<MapProps> = ({ userLocation }) => {
+  const [directions, setDirections] =
+    useState<google.maps.DirectionsResult | null>(null);
+
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: "AIzaSyBg-b2TVo5iMwNZH1jBvEfStVs8CDIVCLQ" || "",
+  });
+  //console.log("map api key:", process.env.GOOGLE_API_KEY);
 
   const fetchDirections = () => {
     if (userLocation) {
@@ -39,19 +51,25 @@ const Map = ({ userLocation }: any) => {
     }
   };
 
-  React.useEffect(() => {
-    if (userLocation) {
+  useEffect(() => {
+    if (isLoaded && userLocation) {
       fetchDirections();
     }
-  }, [userLocation]);
+  }, [isLoaded, userLocation]);
+
+  if (loadError) {
+    return <div>Error loading maps</div>;
+  }
+
+  if (!isLoaded) {
+    return <div>Loading Maps</div>;
+  }
 
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-        <Marker position={center} />
-        {directions && <DirectionsRenderer directions={directions} />}
-      </GoogleMap>
-    </LoadScript>
+    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+      <Marker position={center} />
+      {directions && <DirectionsRenderer directions={directions} />}
+    </GoogleMap>
   );
 };
 

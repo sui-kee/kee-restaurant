@@ -25,7 +25,7 @@ const Location = () => {
     <div>
       <h1>Welcome to Our Restaurant</h1>
       <p>Find us at:</p>
-      {/* <Map userLocation={userLocation} /> */}
+      <Map userLocation={userLocation} />
     </div>
   );
 };

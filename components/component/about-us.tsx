@@ -83,7 +83,7 @@ export function AboutUs() {
                 Visit us at our cozy location in the heart of the city, just a
                 short walk from the metro station.
               </p>
-              <Image
+              {/* <Image
                 alt="Kitchen"
                 className="rounded-lg object-cover"
                 height="600"
@@ -93,11 +93,11 @@ export function AboutUs() {
                   objectFit: "cover",
                 }}
                 width="800"
-              />
+              /> */}
             </div>
             <div className="rounded-lg overflow-hidden" />
           </div>
-          {/* <Location /> */}
+          <Location />
         </div>
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32">
