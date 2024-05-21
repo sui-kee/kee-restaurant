@@ -27,7 +27,7 @@ const Map: React.FC<MapProps> = ({ userLocation }) => {
     useState<google.maps.DirectionsResult | null>(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBg-b2TVo5iMwNZH1jBvEfStVs8CDIVCLQ" || "",
+    googleMapsApiKey: "22222222222222" || "",
   });
   //console.log("map api key:", process.env.GOOGLE_API_KEY);
 
