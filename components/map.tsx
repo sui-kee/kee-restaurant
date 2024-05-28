@@ -14,8 +14,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 3.011342,
-  lng: 101.4161319,
+  lat: 3.011824131011963,
+  lng: 101.41642761230469,
 };
 
 interface MapProps {
@@ -27,9 +27,8 @@ const Map: React.FC<MapProps> = ({ userLocation }) => {
     useState<google.maps.DirectionsResult | null>(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "22222222222222" || "",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API || "",
   });
-  //console.log("map api key:", process.env.GOOGLE_API_KEY);
 
   const fetchDirections = () => {
     if (userLocation) {
